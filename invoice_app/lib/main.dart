@@ -1,19 +1,15 @@
-// ignore_for_file: prefer_const_constructors, unused_import
+// ignore_for_file: prefer_const_constructors
 
-import 'PrintingPage.dart';
+//import 'PrintingPage.dart';
+//import 'backendvar.dart';
+//import 'database.dart';
 import 'TableGenerate.dart';
-import 'backendvar.dart';
 import 'package:flutter/material.dart';
-import 'database.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-
-final DBapi x = DBapi();
 
 Future<void> main() async {
   sqfliteFfiInit();
   databaseFactory = databaseFactoryFfi;
-  await x.open();
-  await x.close();
   runApp(MyApp());
 }
 
