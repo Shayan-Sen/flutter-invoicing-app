@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, must_be_immutable
 
-import 'package:billproject/PrintingPage.dart';
-import 'package:billproject/backendvar.dart';
+import 'PrintingPage.dart';
+import 'backendvar.dart';
 import 'package:flutter/material.dart';
 
 int x = 1;

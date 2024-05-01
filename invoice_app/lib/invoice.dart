@@ -2,7 +2,7 @@
 
 // ignore_for_file: prefer_const_constructors
 
-import 'package:billproject/backendvar.dart';
+import 'backendvar.dart';
 import 'package:flutter/foundation.dart';
 //import 'package:flutter/widgets.dart';
 //import 'package:flutter/material.dart';

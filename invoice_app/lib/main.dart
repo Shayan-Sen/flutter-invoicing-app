@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
-import 'package:billproject/PrintingPage.dart';
-import 'package:billproject/TableGenerate.dart';
-import 'package:billproject/backendvar.dart';
+import 'PrintingPage.dart';
+import 'TableGenerate.dart';
+import 'backendvar.dart';
 import 'package:flutter/material.dart';
 import 'database.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -12,6 +12,8 @@ final DBapi x = DBapi();
 Future<void> main() async {
   sqfliteFfiInit();
   databaseFactory = databaseFactoryFfi;
+  await x.open();
+  await x.close();
   runApp(MyApp());
 }
 
