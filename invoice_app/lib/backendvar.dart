@@ -2,6 +2,21 @@
 //import 'package:clock/src/utils.dart';
 enum MUnits { pcs, box }
 
+enum Months {
+  january,
+  february,
+  march,
+  april,
+  may,
+  june,
+  july,
+  august,
+  september,
+  october,
+  november,
+  december
+}
+
 enum Status { arrival, departure }
 
 const database = "billing.db";
@@ -64,21 +79,6 @@ final monthsMap = {
   "november": "11",
   "december": "12"
 };
-
-enum Months {
-  january,
-  february,
-  march,
-  april,
-  may,
-  june,
-  july,
-  august,
-  september,
-  october,
-  november,
-  december
-}
 
 var jsonData = [];
 
