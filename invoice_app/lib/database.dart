@@ -308,5 +308,20 @@ class DBapi {
       return p;
     }
   }
-//do implement a get log function
+
+  Future<List<Log>> getLog({int? year, Months? month, int? day}) async {
+    final db = _getDatabaseorThrow();
+    year = (year == null) ? DateTime.now().year : year;
+    final String yearstr = "$year";
+    final String monthstr = (month == null) ? "" : "-${monthsMap[month.name]}-";
+    final String daystr = (day == null) ? "" : "$day";
+    final String datestr = yearstr + monthstr + daystr;
+    final results =
+        await db.query(logTable, where: "time_ like %?%", whereArgs: [datestr]);
+    if (results.isEmpty) {
+      throw RowsNotFoundException();
+    } else {
+      return (results.map((e) => Log.fromRow(e))).toList();
+    }
+  }
 }
