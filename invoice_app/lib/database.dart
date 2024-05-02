@@ -101,10 +101,8 @@ class Log {
 //API
 class DBapi {
   Database? db_;
-
-  void returnDbState1() {
-    print(db_);
-  }
+  final String databaseName;
+  DBapi({required this.databaseName});
 
   // ignore: unused_element
   Database _getDatabaseorThrow() {
@@ -124,7 +122,7 @@ class DBapi {
       final docPath = await getApplicationCacheDirectory();
       //wriae
       print(docPath.path);
-      final dbPath = join(docPath.path, database);
+      final dbPath = join(docPath.path, databaseName);
       final dB = await openDatabase(dbPath);
       await dB.execute(createProductTable);
       await dB.execute(createStockTable);
@@ -325,3 +323,5 @@ class DBapi {
     }
   }
 }
+
+class UserDB {}
